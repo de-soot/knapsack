@@ -1,2 +1,2 @@
 # knapsack
-My recursive solution to the knapsack problem. Written in C.
+Recursive solution to the knapsack problem written in C.
