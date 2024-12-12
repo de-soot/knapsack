@@ -1,12 +1,12 @@
 # Knapsack
-Recursive Depth-First Search (DFS) algorithm solution to the knapsack problem written in C.
+Recursive Depth-First Search (DFS) algorithm solution to the knapsack problem hand-written in C.
 
 ## What
 There is a set of numbers that you need to fill a knapsack with, where the sum of the numbers in the subset is equal to the maximum the knapsack can hold.
 To solve the knapsack problem, find the optimal (subset has to have the smallest number of elements possible) way to fill the knapsack.
 
 ## Why
-For fun, and to practice writing programs in a low-level language and using recursion to solve algorithmic problems.
+For fun; to practice writing, debugging, and compiling programs in a low-level language; and to try using recursion to solve algorithmic problems.
 
 ## How
 Below is an explanation of how the program works:
