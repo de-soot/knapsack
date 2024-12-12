@@ -20,4 +20,4 @@ To be more precise, it technically branches all the way down to a subset with 0 
 ## Limitations
 Below are some of the limitations of this program:
 - Regardless of the number of optimal solutions, the program will only give one and it will always be the same result
-- This program only handles values of type integer, but it can be easily modified to allow more, such as `float`s (single-precision floating-points), `double`s (double-precision floating-points), and even `char`s (characters).
+- This program only handles values of type integer, but it can be easily modified to allow more, such as `float` (single-precision floating-point), `double` (double-precision floating-point), and even `char` (character).
