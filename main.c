@@ -7,7 +7,7 @@ int main(void) {
 	int length = len(set, sizeof(set));
 	int s[length]; // for use in *subset initialisation
 	
-	// printSet(set, length, isSorted?);
+	// printSet(set, length, isSorted?[0(no), 1(yes)]);
 	printSet(set, length, 0); // to compare sorted
 
 	if(unsortedTest(set, length)) { selectionSort(set, length); }
