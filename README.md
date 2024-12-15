@@ -6,9 +6,11 @@ Recursive Depth-First Search (DFS) algorithm solution to the knapsack problem ha
 Note: The numbers in the set can be negative.
 
 ### Legend
-`[i686/x86_64]` - binary file architecture
-`[target]` - value of subset's sum
-`[set[0] set[1] ...]` - set of numbers seperated by spaces
+- `[i686/x86_64]` - binary file architecture
+
+- `[target]` - value of subset's sum
+
+- `[set[0] set[1] ...]` - set of numbers seperated by spaces
 
 ### Linux Terminal:
 ```
