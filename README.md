@@ -5,13 +5,6 @@ Recursive Depth-First Search (DFS) algorithm solution to the knapsack problem ha
 
 Note: The numbers in the set can be negative.
 
-### Legend
-- `[i686/x86_64]` - binary file architecture
-
-- `[target]` - value of subset's sum
-
-- `[set[0] set[1] ...]` - set of numbers seperated by spaces
-
 ### Linux Terminal:
 ```
 ./[i686/x86_64]-redhat-linux [target] [set[0] set[1] ...]
@@ -21,6 +14,14 @@ Note: The numbers in the set can be negative.
 ```
 [i686/x86_64]-windows.exe [target] [set[0] set[1] ...]
 ```
+
+### Legend
+- `[i686/x86_64]` - binary file architecture
+
+- `[target]` - value of subset's sum
+
+- `[set[0] set[1] ...]` - set of numbers seperated by spaces
+
 
 ## What
 There is a set of numbers that you need to fill a knapsack with, where the sum of the numbers in the subset is equal to the maximum the knapsack can hold.
