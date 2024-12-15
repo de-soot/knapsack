@@ -1,12 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int len(int *set, int length) {
-	int elementSize = sizeof(set[0]);
-	if(elementSize == 0) { return 0; }
-	return length / elementSize;
-}
-
-int unsortedTest(int *set, int length) {
+int unsorted(int *set, int length) {
 	for(int i = 0; i < length - 1; i++) {
 		if(set[i] > set[i + 1]) { return 1; }
 	}
@@ -14,7 +9,7 @@ int unsortedTest(int *set, int length) {
 	return 0;
 }
 
-int *selectionSort(int *set, int length) {
+void selectionSort(int *set, int length) {
 	int min; // index to the leftmost (minimum) element in unsorted subset
 
 	for(int i = 0; i < length; i++) {
@@ -31,13 +26,20 @@ int *selectionSort(int *set, int length) {
 }
 
 void printSet(int *set, int length, int isSubset) {
-	printf("{%d", set[0]);
+	if(isSubset) { printf("subset = {%d", set[0]); }
+	else { printf("set = {%d", set[0]); }
 	for(int i = 1; i < length; i++) {
 		int element = set[i];
 		if(isSubset && element == 0) { break; } // stop when reach end of subset (denoted by 0)
 		printf(", %d", element);
 	}
 	printf("}\n");
+}
+
+void parseSet(int *set, char **argv, int length) {
+	for(int i = 0; i < length; i++) {
+		set[i] = atoi(argv[i + 2]); // minus 2 because argc includes command to execute program and target value, which are not elements of the set
+	}
 }
 
 int *findSubset(int *set, int *subset, int length, int target, int sum, int index, int takeCount) {
@@ -55,6 +57,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		
 		// take current number in set
 		int num = set[index];
+
 		if(num != 0) { // subset should have no zeros
 			subset[takeCount] = num;
 			int *take = findSubset(set, subset, length, target, sum + num, index + 1, takeCount + 1);

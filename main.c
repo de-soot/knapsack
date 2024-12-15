@@ -1,21 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "knapsack.h"
 
-int main(void) {
-	// int set[] = {-1, 0, 1, 2, 5, 8, 9, 10}; (sorted)
-	int set[] = {1, 0, -1, 5, 10, 8, 2, 9}; // test case (unsorted)
-	int length = len(set, sizeof(set));
-	int s[length]; // for use in *subset initialisation
+int main(int argc, char **argv) {
+	int target = atoi(argv[1]);
+	int length = argc - 2; // minus 2 because argc includes command to execute program and target value, which are not elements of the set
 	
-	// printSet(set, length, isSorted?[0(no), 1(yes)]);
-	printSet(set, length, 0); // to compare sorted
+	int set[length];
 
-	if(unsortedTest(set, length)) { selectionSort(set, length); }
+	parseSet(set, argv, length);
+	
+	// printSet(set, length, isSubset?[0(no, 1(yes))])
+	printSet(set, length, 0);
+	printf("target = %d\nlength = %d\n", target, length);
 
-	printSet(set, length, 0); // check if sorted
+	if(unsorted(set, length)) { selectionSort(set, length); }
 
-	// int subset[] = findSubset(set, subset, length, target, sum, index, takeCount);
-	int *subset = findSubset(set, s, length, 17, 0, 0, 0);
+	int s[length]; // for *subset initialisation
+
+	// findSubset(set, subset, length, target, sum, index, takeCount);
+	int *subset = findSubset(set, s, length, target, 0, 0, 0);
 
 	if(subset == 0) { printf("no subset found\n"); }
 	else { printSet(subset, length, 1); }
