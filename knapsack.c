@@ -47,8 +47,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 			subset[takeCount] = 0;
 		}
 		return subset;
-	}
-	else if(sum < target && index < length) {
+	} else if(sum < target && index < length) {
 		// skip current number in set
 		int *skip = findSubset(set, subset, length, target, sum, index + 1, takeCount);
 
