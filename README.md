@@ -1,6 +1,25 @@
 # Knapsack
 Recursive Depth-First Search (DFS) algorithm solution to the knapsack problem hand-written in C.
 
+## Usage
+
+Note: The numbers in the set can be negative.
+
+### Legend
+`[i686/x86_64]` - binary file architecture
+`[target]` - value of subset's sum
+`[set[0] set[1] ...]` - set of numbers seperated by spaces
+
+### Linux Terminal:
+```
+./[i686/x86_64]-redhat-linux [target] [set[0] set[1] ...]
+```
+
+### Windows Command Line:
+```
+[i686/x86_64]-windows.exe [target] [set[0] set[1] ...]
+```
+
 ## What
 There is a set of numbers that you need to fill a knapsack with, where the sum of the numbers in the subset is equal to the maximum the knapsack can hold.
 To solve the knapsack problem, find the optimal (subset has to have the smallest number of elements possible) way to fill the knapsack.
@@ -19,6 +38,5 @@ To be more precise, it technically branches all the way down to a subset with 0 
 
 ## Limitations
 Below are some of the limitations of this program:
-- You need to change the source code to run the program with different inputs.
 - Regardless of the number of optimal solutions, the program will only give one and it will always be the same result
 - This program only handles values of type `int` (integer), but it can be easily modified to allow more, such as `float` (single-precision floating-point), `double` (double-precision floating-point), and even `char` (character).
