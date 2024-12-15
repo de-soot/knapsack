@@ -28,7 +28,7 @@ There is a set of numbers that you need to fill a knapsack with, where the sum o
 To solve the knapsack problem, find the optimal (subset has to have the smallest number of elements possible) way to fill the knapsack.
 
 ## Why
-For fun; to practice writing, debugging, and compiling programs in a low-level language; and to try using recursion to solve algorithmic problems.
+For fun; to practice writing, debugging, and compiling programs in a low-level language; and to try to solve algorithmic problems using recursion.
 
 ## How
 Below is an explanation of how the program works:
