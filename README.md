@@ -16,7 +16,7 @@ Note: The numbers in the set can be negative and everything will still work as e
 ```bash
 ./x86_64-redhat-linux 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
 ```
-Subset of the above should be {8, 36}.
+Subset of the above should be `{8, 36}`.
 
 ### Windows Command Line
 ```bat
@@ -27,7 +27,7 @@ Subset of the above should be {8, 36}.
 ```bat
 x86_64-windows.exe 42 1 -13 3 0 4 0 8 2 -1 9 10 24 36
 ```
-Subset of the above should also be {8, 36}.
+Subset of the above should also be `{8, 36}`.
 
 ### Legend
 - `[i686/x86_64]` - cpu architecture
