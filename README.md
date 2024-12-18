@@ -54,7 +54,6 @@ To be more precise, it technically branches all the way down to a subset with 0 
 - Due to how arrays in C work (having a fixed size, references decaying to pointers, etc.), if the subset is not full (the same size as the original set), a zero is used to denote the end of the subset (an optimal subset should have no zeros, as zeros contribute nothing to the sum) so that random numbers are not displayed when we later loop through the array to print out the numbers in the subset.
 - The root function then returns the subset for the main program to print out on the command-line terminal / console using a for-loop in another function.
 
-## Limitations
-Below are some of the limitations of this program:
-- Regardless of the number of optimal solutions, the program will only give one and it will always be the same result
+## Limitation
+Below is a limitation of this program.
 - This program only handles values of type `int` (integer), but it can be easily modified to allow more, such as `float` (single-precision floating-point), `double` (double-precision floating-point), and even `char` (character).
