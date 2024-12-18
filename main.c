@@ -21,6 +21,8 @@ int main(int argc, char **argv) {
 	// findSubset(set, subset, length, target, sum, index, takeCount);
 	int *subset = findSubset(set, s, length, target, 0, 0, 0);
 
+	subset = selectionSort(subset, length);
+
 	if(subset == 0) { printf("no subset found\n"); }
 	else { printSet(subset, length, 1); }
 
