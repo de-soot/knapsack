@@ -56,4 +56,4 @@ To be more precise, it technically branches all the way down to a subset with 0 
 
 ## Limitation
 Below is a limitation of this program.
-- This program only handles values of type `int` (integer), but it can be easily modified to allow more, such as `float` (single-precision floating-point), `double` (double-precision floating-point), and even `char` (character).
+- This program only handles values of type `int` (integer), but it can be easily modified to allow more, such as `float` (single-precision floating-point), and even `char` (character).
