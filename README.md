@@ -40,7 +40,7 @@ Subset of the above should also be `{8, 36}`.
 ## What
 There is a set of numbers that you need to select a subset of to fill a knapsack with, where the sum of the numbers in the subset is equal to the maximum the knapsack can hold.
 
-To solve the knapsack problem, find the optimal way to fill the knapsack, where the subset has the least amount of elements.
+To solve the knapsack problem, find the optimal way (assuming there is only one) to fill the knapsack, where the subset has the least amount of elements.
 
 ## Why
 For fun; to practice writing, debugging, and compiling programs in a low-level language; and to try solving algorithmic problems using recursion.
