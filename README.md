@@ -30,7 +30,7 @@ x86_64-windows.exe 42 1 -13 3 0 4 0 8 2 -1 9 10 24 36
 Subset of the above should also be `{8, 36}`.
 
 ### Legend
-- `[i686/x86_64]` - cpu architecture
+- `[i686/x86_64]` - CPU architecture (32-bit / 64-bit)
 
 - `[target]` - value of subset's sum
 
