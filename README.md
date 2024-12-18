@@ -42,9 +42,9 @@ Subset of the above commands should also be `{8, 10, 24}`.
 ### Legend
 - `[i686/x86_64]` - CPU architecture (32-bit / 64-bit)
 
-- `[target]` - value of subset's sum
+- `[target]` - Value of subset's sum
 
-- `[set[0] set[1] ...]` - set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
+- `[set[0] set[1] ...]` - Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
 
 
 ## What
