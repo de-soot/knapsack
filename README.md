@@ -34,7 +34,7 @@ x86_64-windows.exe 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
 ```
 
 ```bat
-i686-windows.exe 42 1 -13 3 0 4 0 8 2 -1 9 10 24 36
+i686-windows.exe 42 1 -13 1 3 0 4 0 8 2 -1 9 10 24 36
 ```
 
 Subset of the above commands should also be `{8, 10, 24}`.
