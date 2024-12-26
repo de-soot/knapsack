@@ -3,6 +3,12 @@
 #include "knapsack.h"
 
 int main(int argc, char **argv) {
+	if(argc < 3) {
+		printf("Not enough arguments");
+
+		exit(1);
+	}
+
 	int target = atoi(argv[1]);
 	int length = argc - 2; // minus 2 because argc includes command to execute program and target value, which are not elements of the set
 	
