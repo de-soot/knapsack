@@ -4,7 +4,7 @@
 
 int main(int argc, char **argv) {
 	if(argc < 3) {
-		printf("Not enough arguments");
+		printf("Not enough arguments\n");
 
 		exit(1);
 	}
