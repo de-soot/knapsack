@@ -25,16 +25,16 @@ Subset of the above commands should be `{8, 10, 24}`.
 
 ### Windows Command Line
 ```bat
-[i686/x86_64]-windows.exe [target] [set[0] set[1] ...]
+.\[i686/x86_64]-windows.exe [target] [set[0] set[1] ...]
 ```
 
 #### Example
 ```bat
-x86_64-windows.exe 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
+.\x86_64-windows.exe 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
 ```
 
 ```bat
-i686-windows.exe 42 1 -13 1 3 0 4 0 8 2 -1 9 10 24 36
+.\i686-windows.exe 42 1 -13 1 3 0 4 0 8 2 -1 9 10 24 36
 ```
 
 Subset of the above commands should also be `{8, 10, 24}`.
@@ -45,7 +45,6 @@ Subset of the above commands should also be `{8, 10, 24}`.
 - `[target]` - Value of subset's sum
 
 - `[set[0] set[1] ...]` - Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
-
 
 ## What
 There is a set of numbers that you need to select a subset of to fill a knapsack with, where the sum of the numbers in the subset is equal to the maximum the knapsack can hold.
