@@ -1,5 +1,5 @@
 # Knapsack
-Recursive brute-force depth-first search (DFS) algorithm solution to the knapsack problem hand-written in C.
+Recursive brute-force depth-first search (DFS) algorithm solution to the knapsack problem. Written in C.
 
 ## Usage
 
