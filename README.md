@@ -8,16 +8,16 @@ Download the binary files [here](https://github.com/de-soot/knapsack/releases/la
 Note: The numbers in the set can be negative and everything will still work as expected.
 
 ### Linux Terminal
-```bash
+```sh
 ./[i686/x86_64]-redhat-linux [target] [set[0] set[1] ...]
 ```
 
 #### Example
-```bash
+```sh
 ./x86_64-redhat-linux 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
 ```
 
-```bash
+```sh
 ./x86_64-redhat-linux 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
 ```
 
