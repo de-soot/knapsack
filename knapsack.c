@@ -9,7 +9,7 @@ int unsorted(int *set, int length) {
 	return 0;
 }
 
-void selectionSort(int *set, int length) {
+void sort(int *set, int length) {
 	for(int i = 0; i < length; i++) {
 		for(int j = i; j < length; j++) {
 			if(set[j] < set[i]) { // swap elements

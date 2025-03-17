@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 	printf("target = %d\nlength = %d\n", target, length);
 
 	// check and sorts set
-	if(unsorted(set, length)) { selectionSort(set, length); }
+	if(unsorted(set, length)) { sort(set, length); }
 
 	int s[length]; // for *subset initialisation
 
