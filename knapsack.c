@@ -10,15 +10,11 @@ int unsorted(int *set, int length) {
 }
 
 void selectionSort(int *set, int length) {
-	int min; // index to the leftmost (minimum) element in unsorted subset
-
 	for(int i = 0; i < length; i++) {
-		min = i; // denotes the start of unsorted subset
-
 		for(int j = i; j < length; j++) {
-			if(set[j] < set[min]) { // swap elements
-				int temp = set[min];
-				set[min] = set[j];
+			if(set[j] < set[i]) { // swap elements
+				int temp = set[i];
+				set[i] = set[j];
 				set[j] = temp;
 			}
 		}

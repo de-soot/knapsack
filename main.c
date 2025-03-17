@@ -1,24 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "knapsack.h"
+#include "knapsack.h" // for helper functions
 
 int main(int argc, char **argv) {
-	if(argc < 3) {
-		fprintf(stderr, "Not enough arguments\n");
+	if(argc < 3) { // check for arg count
+		fprintf(stderr, "Not enough arguments\n"); // print error
 		return 1;
 	}
 
-	int target = atoi(argv[1]);
+	int target = atoi(argv[1]); // convert argv[1] to int
 	int length = argc - 2; // minus 2 because argc includes command to execute program and target value, which are not elements of the set
 	
-	int set[length];
+	int set[length] = {};
 
 	parseSet(set, argv, length);
 	
-	// printSet(set, length, isSubset?[0(no, 1(yes))])
+	// printSet(set, length, isSubset?[0/1 (no/yes)])
 	printSet(set, length, 0);
 	printf("target = %d\nlength = %d\n", target, length);
 
+	// check and sorts set
 	if(unsorted(set, length)) { selectionSort(set, length); }
 
 	int s[length]; // for *subset initialisation
