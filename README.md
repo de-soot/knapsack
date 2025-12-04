@@ -17,11 +17,7 @@ Note: The numbers in the set can be negative and everything will still work as e
 ./x86_64-redhat-linux 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
 ```
 
-```sh
-./i686-redhat-linux 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
-```
-
-Subset of the above commands should be `{8, 10, 24}`.
+Subset of the above command should be `{8, 10, 24}`.
 
 ### Windows Command Line
 ```bat
@@ -33,11 +29,7 @@ Subset of the above commands should be `{8, 10, 24}`.
 .\x86_64-windows.exe 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
 ```
 
-```bat
-.\i686-windows.exe 42 1 -13 1 3 0 4 0 8 2 -1 9 10 24 36
-```
-
-Subset of the above commands should also be `{8, 10, 24}`.
+Subset of the above commands should be `{8, 10, 24}`.
 
 ### Legend
 - `[i686/x86_64]` - CPU architecture (32-bit / 64-bit)
