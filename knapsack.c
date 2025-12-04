@@ -59,7 +59,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		// take current number in set
 		int num = set[index];
 
-		if(num != 0) { // subset should have no zeros
+		if(num != 0) { // valid subset should have no zeros
 			subset[takeCount] = num;
 			int *take = findSubset(set, subset, length, target, sum + num, index + 1, takeCount + 1);
 			
