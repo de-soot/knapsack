@@ -6,7 +6,7 @@ This program implements a solver for a knapsack variant where there is a multise
 
 In the case of multiple valid subsets, find a subset with the least number of elements out of all valid subsets.
 
-## Why
+## Why Did You Make This
 For fun, to practice writing, debugging, and compiling programs in a "low-level" language like C, and to try solving problems using recursion.
 
 ## How It Works
