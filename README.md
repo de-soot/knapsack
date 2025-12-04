@@ -52,7 +52,7 @@ There is a set of numbers that you need to select a subset of to fill a knapsack
 To solve the knapsack problem, find the optimal way (assuming there is only one) to fill the knapsack, where the subset has the least amount of elements.
 
 ## Why
-For fun; to practice writing, debugging, and compiling programs in a low-level language; and to try solving algorithmic problems using recursion.
+For fun; to practice writing, debugging, and compiling programs in a "low-level" language like C; and to try solving problems using recursion.
 
 ## How
 Below is an explanation of how the program works.
