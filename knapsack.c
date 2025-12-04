@@ -52,7 +52,7 @@ void parseSet(int *set, char **argv, int length) {
 // the original set is sorted from lowest to highest.
 // will skip all first
 int *findSubset(int *set, int *subset, int length, int target, int sum, int index, int takeCount) {
-	if(sum == target) { // cannot add more elements
+	if(sum == target) { // found a valid subset
 		// denote end of subset (last non-zero element is indexed at takeCount - 1)
 		// because optimal subset should not have zeros (which contribute nothing to the sum) if target is non-zero
 		if(takeCount < length) { // do not denote if subset is full
