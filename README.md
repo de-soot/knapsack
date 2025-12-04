@@ -1,5 +1,5 @@
 # Knapsack
-Recursive search algorithm for the knapsack problem in C.
+Naive recursive depth-first search algorithm for the knapsack problem in C.
 
 ## Usage
 
