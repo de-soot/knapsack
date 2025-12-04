@@ -43,7 +43,7 @@ void printSet(int *set, int length, int isSubset) {
 // convert command-line args to int array (in-place)
 void parseSet(int *set, char **argv, int length) {
 	for(int i = 2; i < length; i++) {
-		set[i] = atoi(argv[i]); // convert from ascii to int
+		set[i] = atoi(argv[i]); // ascii to int
 	}
 }
 
@@ -60,7 +60,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		}
 		
 		return subset;
-	} else if(sum < target && index < length) {
+	} else if(index < length) {
 		// skip current number in set
 		int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
 		if(skip != 0) { return skip; }
@@ -75,5 +75,5 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		}
 	}
 
-	return 0; // if either sum > target OR index => length, end current traversal
+	return 0; // if index >= length and cannot find a valid subset, end current traversal
 }
