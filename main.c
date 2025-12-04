@@ -5,7 +5,7 @@
 int main(int argc, char **argv) {
 	if(argc < 3) { // check for arg count (needs at least the target and 1 element)
 		fprintf(stderr, "Usage: %s [target] [elements ...]\n", argv[0]); // print error
-		return 1;
+		exit(1);
 	}
 
 	int target = atoi(argv[1]); // convert argv[1] to int
