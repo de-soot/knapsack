@@ -1,5 +1,5 @@
 # Knapsack
-Recursive search (DFS) algorithm for knapsack problem in C.
+Recursive search algorithm for knapsack problem in C.
 
 ## Usage
 
