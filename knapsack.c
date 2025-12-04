@@ -1,17 +1,17 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // for atoi()
 
-int unsorted(int *set, int length) {
+int unsorted(int *set, int length) { // checks if elements are sorted from highest to lowest
 	for(int i = 0; i < length - 1; i++) {
-		if(set[i] > set[i + 1]) { return 1; }
+		if(set[i] < set[i + 1]) { return 1; }
 	}
 
 	return 0;
 }
 
-void sort(int *set, int length) {
+void sort(int *set, int length) { // sort from highest to lowest
 	for(int i = 0; i < length; i++) {
-		for(int j = i; j < length; j++) {
+		for(int j = i+1; j < length; j++) {
 			if(set[j] < set[i]) { // swap elements
 				int temp = set[i];
 				set[i] = set[j];
@@ -22,19 +22,21 @@ void sort(int *set, int length) {
 }
 
 void printSet(int *set, int length, int isSubset) {
+	// whether to print "subset" or "set"
 	if(isSubset) { printf("subset = {%d", set[0]); }
 	else { printf("set = {%d", set[0]); }
+	
 	for(int i = 1; i < length; i++) {
 		int element = set[i];
-		if(isSubset && element == 0) { break; } // stop when reach end of subset (denoted by 0)
-		printf(", %d", element);
+		if(isSubset && element == 0) { break; } // stop when not subset or reach end of subset (denoted by 0)
+		printf(", %d", element); // print element
 	}
-	printf("}\n");
+	printf("}\n"); // close bracket
 }
 
 void parseSet(int *set, char **argv, int length) {
-	for(int i = 0; i < length; i++) {
-		set[i] = atoi(argv[i + 2]); // minus 2 because argc includes command to execute program and target value, which are not elements of the set
+	for(int i = 2; i < length; i++) {
+		set[i] = atoi(argv[i]); // convert from ascii to int
 	}
 }
 
