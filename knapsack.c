@@ -52,7 +52,7 @@ void parseSet(int *set, char **argv, int length) {
 // the original set is sorted from highest to lowest
 int *findSubset(int *set, int *subset, int length, int target, int sum, int index, int takeCount) {
 	if(sum == target) { // cannot add more elements
-		// denote end of subset
+		// denote end of subset (last non-zero element is indexed at takeCount - 1)
 		if(takeCount < length) {
 			subset[takeCount] = 0;
 		}
@@ -61,16 +61,14 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 	} else if(sum < target && index < length) {
 		// skip current number in set
 		int *skip = findSubset(set, subset, length, target, sum, index + 1, takeCount);
-
 		if(skip != 0) { return skip; }
 		
 		// take current number in set
 		int num = set[index];
 
 		if(num != 0) { // valid subset should have no zeros
-			subset[takeCount] = num;
+			subset[takeCount] = num; // latest previously added element is indexed at the current takeCount - 1
 			int *take = findSubset(set, subset, length, target, sum + num, index + 1, takeCount + 1);
-			
 			if(take != 0) { return take; }
 		}
 	}
