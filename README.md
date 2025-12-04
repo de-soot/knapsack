@@ -31,8 +31,6 @@ Subset of the above command should be `{8, 10, 24}`.
 
 Subset of the above commands should be `{8, 10, 24}`.
 
-Note: The original set can include negative integers and zeros in addition to positive integers.
-
 ### Legend
 - `[i686/x86_64]` - CPU architecture (32-bit / 64-bit)
 
@@ -41,7 +39,7 @@ Note: The original set can include negative integers and zeros in addition to po
 - `[set[0] set[1] ...]` - Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
 
 ## What is Knapsack
-There is a set of numbers that you need to select a subset of to fill a metaphorical knapsack with, where the sum of the numbers in the subset is equal to the maximum value the knapsack can hold.
+This implements a solver for a variant where there is a multiset of numbers that you need to select a subset of to fill a metaphorical knapsack with, where the sum of the numbers in the subset is exactly equal to the maximum value the knapsack can hold.
 
 To solve the knapsack problem, find a way (assuming there is only one) to fill the knapsack with the least number of elements out of all valid subsets.
 
@@ -59,5 +57,4 @@ For fun; to practice writing, debugging, and compiling programs in a "low-level"
 ## Limitations
 - For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
 - Since the recursive search function skips all elements first, one call is effectively always wasted for every run with a non-zero target value.
-- The program outputs "no valid subset is found" if there is no valid combination of elements that sum exactly to the target value.
 - Target value has to be positive.
