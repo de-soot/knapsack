@@ -41,7 +41,7 @@ Subset of the above commands should be `{8, 10, 24}`.
 ## What is Knapsack
 This implements a solver for a variant where there is a multiset of numbers that you need to select a subset of to fill a metaphorical knapsack with, where the sum of the numbers in the subset is exactly equal to the maximum value the knapsack can hold.
 
-To solve the knapsack problem, find a way (assuming there is only one) to fill the knapsack with the least number of elements out of all valid subsets.
+To solve the knapsack problem, find a way to fill the knapsack with the least number of elements out of all valid subsets.
 
 ## Why
 For fun, to practice writing, debugging, and compiling programs in a "low-level" language like C, and to try solving problems using recursion.
