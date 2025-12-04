@@ -4,7 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h> // for atoi()
 
-int unsorted(int *set, int length) { // checks if elements are sorted from highest to lowest
+// checks if elements are sorted from highest to lowest
+int unsorted(int *set, int length) {
 	for(int i = 0; i < length - 1; i++) {
 		if(set[i] < set[i + 1]) { return 1; }
 	}
@@ -12,7 +13,8 @@ int unsorted(int *set, int length) { // checks if elements are sorted from highe
 	return 0;
 }
 
-void sort(int *set, int length) { // sort from highest to lowest
+// sort from highest to lowest
+void sort(int *set, int length) {
 	for(int i = 0; i < length; i++) {
 		for(int j = i+1; j < length; j++) {
 			if(set[j] < set[i]) { // swap elements
@@ -31,12 +33,14 @@ void printSet(int *set, int length, int isSubset) {
 	
 	for(int i = 1; i < length; i++) {
 		int element = set[i];
-		if(isSubset && element == 0) { break; } // stop when not subset or reach end of subset (denoted by 0)
+		// stop when not subset or reach end of subset (denoted by 0)
+		if(isSubset && element == 0) { break; }
 		printf(", %d", element); // print element
 	}
 	printf("}\n"); // close bracket
 }
 
+// convert command-line args to int array (in-place)
 void parseSet(int *set, char **argv, int length) {
 	for(int i = 2; i < length; i++) {
 		set[i] = atoi(argv[i]); // convert from ascii to int
