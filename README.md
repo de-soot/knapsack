@@ -48,12 +48,13 @@ For fun; to practice writing, debugging, and compiling programs in a "low-level"
 
 ## How
 Below is an explanation of how the program works.
-- The program first checks if the set is sorted, and sorts it from smallest to largest (using an iterative implemention of selection sort) if it is not. This is to ensure the valid subset that is found first will have the lowest possbile amount of elements out of all valid subsets.
-- Next, it calls the recursive function that goes through and filters all the possible subsets recursively, choosing either to take or skip each element in the set. Each function call creates 2 new branches (therefore the algorithm has a general time complexity of `O(2^n)`, where `n` is the number of elements in the original set).
-- A more detailed explanation of the previous bullet-point would be that it branches all the way down to the subset with 0 elements first (skip all), goes back 1 branch to take the largest element in the sorted set, and if that is not a valid subset, it goes back up another branch to repeat. This is repeated for every branch until it reaches the root, in which it starts the same process all over again but with the first element of the set being in the subset.
-- In each function call, the sum of the elements in the subset are compared to the target sum (maximum knapsack capacity). When the branches reach a 'leaf' of the algorithmic 'tree', the subset is returned back up the tree until it reaches the root of the function tree.
-- Due to arrays having fixed size, a zero is used to denote the end of the subset (an optimal subset should have no zeros as zeros contribute nothing to the sum) if the subset is not the same as the original sorted set so that garbage from the unused allocated array memory is not displayed when looping through the array to print out the numbers in the subset.
-- The root function then returns the subset for the main program to print out on the command-line terminal / console using a for-loop in another function.
+1. The program checks if the set is sorted, and sorts it from smallest to largest (using an iterative implemention of selection sort) if it is not. This is to ensure the valid subset that is found first will have the lowest possbile amount of elements out of all valid subsets.
+2. The recursive function is called and combs through all the possible subsets recursively, choosing either to take or skip each element in the set. Each function call creates 2 new branches (therefore the algorithm has a general time complexity of `O(2^n)`, where `n` is the number of elements in the original set).
+3. A more detailed explanation of (2.) would be that the recursive tree branches all the way down to the subset with 0 elements first (skip all), goes back 1 branch to take the largest element in the sorted set, and if that is not a valid subset, it goes back up another branch to repeat. This is repeated for every branch until it reaches the root, in which it starts the same process all over again but with the first element of the set being in the subset.
+4. In each function call, the sum of the elements in the subset are compared to the target sum (maximum knapsack capacity). When the branches reach a 'leaf' of the tree, the subset is returned back up the tree until it reaches the root of the function tree.
+5. Due to arrays having fixed size, a zero is used to denote the end of the subset (an optimal subset should have no zeros as zeros contribute nothing to the sum) if the subset is not the same as the original sorted set so that garbage from the unused allocated array memory is not displayed when looping through the array to print out the numbers in the subset.
+6. The root function then returns the subset for the main program to print out on the command-line terminal / console using a for-loop in another function.
 
-## Limitation
-For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
+## Limitations
+- For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
+- Since the recursive search function skips all elements first, one call is effectively always wasted for each run.
