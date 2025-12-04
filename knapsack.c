@@ -75,5 +75,5 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		}
 	}
 
-	return 0; // if index >= length and cannot find a valid subset, end current traversal
+	return 0; // if reached the end of set and could not find a valid subset, end current traversal
 }
