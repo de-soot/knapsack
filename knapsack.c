@@ -4,20 +4,20 @@
 #include <stdio.h>
 #include <stdlib.h> // for atoi()
 
-// checks if elements are sorted from highest to lowest
+// checks if elements are sorted from lowest to highest
 int unsorted(int *set, int length) {
 	for(int i = 0; i < length - 1; i++) {
-		if(set[i] < set[i + 1]) { return 1; }
+		if(set[i] > set[i+1]) { return 1; }
 	}
 
 	return 0;
 }
 
-// sort from highest to lowest
+// sort from lowest to highest
 void sort(int *set, int length) {
 	for(int i = 0; i < length; i++) {
 		for(int j = i+1; j < length; j++) {
-			if(set[j] < set[i]) { // swap elements
+			if(set[i] > set[j]) { // swap elements
 				int temp = set[i];
 				set[i] = set[j];
 				set[j] = temp;
@@ -49,7 +49,8 @@ void parseSet(int *set, char **argv, int length) {
 
 // find the first valid subset in an array of numbers using recursion
 // will return the most optimal (having the lowest possbile number of elements) subset if
-// the original set is sorted from highest to lowest
+// the original set is sorted from lowest to highest
+// will skip all first
 int *findSubset(int *set, int *subset, int length, int target, int sum, int index, int takeCount) {
 	if(sum == target) { // cannot add more elements
 		// denote end of subset (last non-zero element is indexed at takeCount - 1)
@@ -60,7 +61,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		return subset;
 	} else if(sum < target && index < length) {
 		// skip current number in set
-		int *skip = findSubset(set, subset, length, target, sum, index + 1, takeCount);
+		int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
 		if(skip != 0) { return skip; }
 		
 		// take current number in set
@@ -68,7 +69,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 
 		if(num != 0) { // valid subset should have no zeros
 			subset[takeCount] = num; // latest previously added element is indexed at the current takeCount - 1
-			int *take = findSubset(set, subset, length, target, sum + num, index + 1, takeCount + 1);
+			int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
 			if(take != 0) { return take; }
 		}
 	}
