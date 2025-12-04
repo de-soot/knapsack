@@ -1,3 +1,6 @@
+// this file includes helper functions for the main program
+// in addition to the main recursive function
+
 #include <stdio.h>
 #include <stdlib.h> // for atoi()
 
