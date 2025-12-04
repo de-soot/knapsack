@@ -75,5 +75,5 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		}
 	}
 
-	return 0; // return zero to end branch if either sum >= target OR index => length
+	return 0; // ends branch if either sum >= target OR index => length
 }
