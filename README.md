@@ -40,7 +40,7 @@ Note: The original set can include negative integers and zeros in addition to po
 
 - `[set[0] set[1] ...]` - Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
 
-## What
+## What is Knapsack
 There is a set of numbers that you need to select a subset of to fill a metaphorical knapsack with, where the sum of the numbers in the subset is equal to the maximum value the knapsack can hold.
 
 To solve the knapsack problem, find a way (assuming there is only one) to fill the knapsack with the least number of elements out of all valid subsets.
@@ -48,8 +48,7 @@ To solve the knapsack problem, find a way (assuming there is only one) to fill t
 ## Why
 For fun; to practice writing, debugging, and compiling programs in a "low-level" language like C; and to try solving problems using recursion.
 
-## How
-Below is an explanation of how the program works.
+## How It Works
 1. The program checks if the set is sorted, and sorts it from smallest to largest (using an iterative implemention of selection sort) if it is not. This is to ensure the valid subset that is found first will have the lowest possbile amount of elements out of all valid subsets.
 2. The recursive function is called and combs through all the possible subsets recursively, choosing either to take or skip each element in the set. Each function call creates 2 new branches (therefore the algorithm has a general time complexity of `O(2^n)`, where `n` is the number of elements in the original set).
 3. The recursive tree first branches all the way down to the subset with 0 elements (skipping all elements), goes back 1 branch to take the largest element in the sorted set, and if that is not a valid subset, it goes back up another branch to repeat. This is repeated until it reaches the root, in which it starts the same process all over again but with the smallest element in the subset.
