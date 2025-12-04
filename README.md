@@ -4,7 +4,7 @@ Implementation of the recursive depth-first search algorithm for the subset sum 
 ## What is This
 This program implements a solver for a knapsack variant where there is a multiset of integers to select a valid subset from, where a valid subset's sum is exactly equal to the target value.
 
-In the case of multiple valid subsets, find a subset with the least number of elements out of all valid subsets.
+In the case of multiple valid subsets, a subset with the least number of elements out of all valid subsets is found.
 
 ## Why Was This Made
 For fun, to practice C programming, and to solve problems using recursion.
