@@ -1,5 +1,5 @@
 # Knapsack
-Naive recursive depth-first search algorithm for the knapsack problem in C.
+Naive recursive depth-first search algorithm for the subset sum problem in C.
 
 ## What is Knapsack
 This program implements a solver for a knapsack variant where there is a multiset of integers to select a valid subset from, where a valid subset's sum is exactly equal to the target value.
