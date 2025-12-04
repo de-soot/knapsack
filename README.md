@@ -60,3 +60,4 @@ For fun; to practice writing, debugging, and compiling programs in a "low-level"
 - For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
 - Since the recursive search function skips all elements first, one call is effectively always wasted for every run with a non-zero target value.
 - The program outputs "no valid subset is found" if there is no valid combination of elements that sum exactly to the target value.
+- Target value has to be positive.
