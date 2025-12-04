@@ -5,7 +5,7 @@ Recursive search algorithm for the knapsack problem in C.
 
 Download the binary files [here](https://github.com/de-soot/knapsack/releases/latest).
 
-Note: The original set can include negative integers and zeros in addition to positive integers.
+Then follow the examples below to run the program.
 
 ### Linux Terminal
 ```sh
@@ -30,6 +30,8 @@ Subset of the above command should be `{8, 10, 24}`.
 ```
 
 Subset of the above commands should be `{8, 10, 24}`.
+
+Note: The original set can include negative integers and zeros in addition to positive integers.
 
 ### Legend
 - `[i686/x86_64]` - CPU architecture (32-bit / 64-bit)
