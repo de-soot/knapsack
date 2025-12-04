@@ -64,5 +64,4 @@ Below is an explanation of how the program works.
 - The root function then returns the subset for the main program to print out on the command-line terminal / console using a for-loop in another function.
 
 ## Limitation
-Below is a limitation of this program.
-- This program only handles values of type `int` (integer), but it can be easily modified to allow more (such as type `float` (floating-point) and even type `char` (character)).
+For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
