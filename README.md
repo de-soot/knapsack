@@ -1,5 +1,5 @@
 # Knapsack
-Recursive search algorithm for knapsack problem in C.
+Recursive search algorithm for the knapsack problem in C.
 
 ## Usage
 
@@ -47,9 +47,9 @@ Subset of the above commands should also be `{8, 10, 24}`.
 - `[set[0] set[1] ...]` - Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
 
 ## What
-There is a set of numbers that you need to select a subset of to fill a knapsack with, where the sum of the numbers in the subset is equal to the maximum the knapsack can hold.
+There is a set of numbers that you need to select a subset of to fill a metaphorical knapsack with, where the sum of the numbers in the subset is equal to the maximum value the knapsack can hold.
 
-To solve the knapsack problem, find the optimal way (assuming there is only one) to fill the knapsack, where the subset has the least amount of elements.
+To solve the knapsack problem, find the optimal way (assuming there is only one) to fill the knapsack, with "optimal" meaning the subset has the least amount of elements out of all valid subsets.
 
 ## Why
 For fun; to practice writing, debugging, and compiling programs in a "low-level" language like C; and to try solving problems using recursion.
