@@ -5,7 +5,7 @@ Recursive search algorithm for the knapsack problem in C.
 
 Download the binary files [here](https://github.com/de-soot/knapsack/releases/latest).
 
-Note: The numbers in the set can be negative and everything will still work as expected.
+Note: The original set can include negative numbers but not zero.
 
 ### Linux Terminal
 ```sh
