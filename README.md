@@ -18,7 +18,7 @@ Note: The numbers in the set can be negative and everything will still work as e
 ```
 
 ```sh
-./x86_64-redhat-linux 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
+./i686-redhat-linux 42 1 -13 0 3 0 -1 4 2 8 9 10 24 36
 ```
 
 Subset of the above commands should be `{8, 10, 24}`.
