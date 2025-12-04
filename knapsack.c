@@ -48,8 +48,8 @@ void parseSet(int *set, char **argv, int length) {
 }
 
 // find the first valid subset in an array of numbers using recursion
-// will return the most optimal (having the lowest possbile number of elements) subset if
-// the original set is sorted from lowest to highest
+// will return the subset with the lowest possbile number of elements if
+// the original set is sorted from lowest to highest.
 // will skip all first
 int *findSubset(int *set, int *subset, int length, int target, int sum, int index, int takeCount) {
 	if(sum == target) { // cannot add more elements
