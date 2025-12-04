@@ -44,7 +44,7 @@ This implements a solver for a variant where there is a multiset of numbers that
 To solve the knapsack problem, find a way (assuming there is only one) to fill the knapsack with the least number of elements out of all valid subsets.
 
 ## Why
-For fun; to practice writing, debugging, and compiling programs in a "low-level" language like C; and to try solving problems using recursion.
+For fun, to practice writing, debugging, and compiling programs in a "low-level" language like C, and to try solving problems using recursion.
 
 ## How It Works
 1. The program checks if the set is sorted, and sorts it from smallest to largest (using an iterative implemention of selection sort) if it is not. This is to ensure the valid subset that is found first will have the lowest possbile amount of elements out of all valid subsets.
