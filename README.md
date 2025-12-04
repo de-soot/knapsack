@@ -48,7 +48,7 @@ For fun; to practice writing, debugging, and compiling programs in a "low-level"
 
 ## How
 Below is an explanation of how the program works.
-- The program first checks if the set is sorted, and sorts it (using an iterative implemention of selection sort) if it is not. This is to ensure the subset that is found is one with the least amount of elements.
+- The program first checks if the set is sorted, and sorts it from largest to smallest (using an iterative implemention of selection sort) if it is not. This is to ensure the valid subset that is found will have the lowest possbile amount of elements.
 - Next, it calls the function that goes through and filters all the possible subsets recursively, choosing either to take or skip each element in the set. This creates 2 'branches' with each function call (therefore the algorithm has a time complexity of `O(2^n)`).
 - A more precise description of the previous bullet-point would be that it technically branches all the way down to the subset with 0 elements first, goes back 1 branch to take the right-most (largest) element in the sorted set, and (if that is not the optimal subset) then goes back up another branch to repeat. This is repeated for every branch until it reaches the root, in which it starts the same process all over again but with the first element of the set being in the subset. The fact that it travels down to the leaves first before exploring other branches is why this algorithm would classified as DFS.
 - The sum of the elements in the subset are compared to the target sum (maximum knapsack capacity) until the branches reach a dead end (aptly named the 'leaves' of the algorithmic 'tree'), and returned back up the tree until it reaches the root of the function tree.
