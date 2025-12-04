@@ -51,11 +51,12 @@ void parseSet(int *set, char **argv, int length) {
 // will return the most optimal (having the lowest possbile number of elements) subset if
 // the original set is sorted from highest to lowest
 int *findSubset(int *set, int *subset, int length, int target, int sum, int index, int takeCount) {
-	if(sum == target) {
+	if(sum == target) { // cannot add more elements
+		// denote end of subset
 		if(takeCount < length) {
-			// to denote end of subset
 			subset[takeCount] = 0;
 		}
+		
 		return subset;
 	} else if(sum < target && index < length) {
 		// skip current number in set
