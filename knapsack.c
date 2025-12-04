@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h> // for atoi()
 
-// checks if elements are sorted from lowest to highest
+// checks if elements are sorted in ascending order
 int unsorted(int *set, int length) {
 	for(int i = 0; i < length - 1; i++) {
 		if(set[i] > set[i+1]) { return 1; }
@@ -13,7 +13,7 @@ int unsorted(int *set, int length) {
 	return 0;
 }
 
-// sort from lowest to highest
+// sort in ascending order
 void sort(int *set, int length) {
 	for(int i = 0; i < length; i++) {
 		for(int j = i+1; j < length; j++) {
@@ -49,7 +49,7 @@ void parseSet(int *set, char **argv, int length) {
 
 // find the first valid subset in an array of numbers using recursion
 // will return the subset with the lowest possbile number of elements if
-// the original set is sorted from lowest to highest.
+// the original set is sorted in ascending order.
 // will skip all first
 int *findSubset(int *set, int *subset, int length, int target, int sum, int index, int takeCount) {
 	if(sum == target) { // found a valid subset
