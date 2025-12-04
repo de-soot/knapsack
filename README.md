@@ -1,7 +1,7 @@
 # Knapsack
 Implementation of the recursive depth-first search algorithm for the subset sum problem in C.
 
-## What is Knapsack
+## What is This
 This program implements a solver for a knapsack variant where there is a multiset of integers to select a valid subset from, where a valid subset's sum is exactly equal to the target value.
 
 In the case of multiple valid subsets, find a subset with the least number of elements out of all valid subsets.
