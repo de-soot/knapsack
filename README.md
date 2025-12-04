@@ -57,4 +57,4 @@ Below is an explanation of how the program works.
 
 ## Limitations
 - For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
-- Since the recursive search function skips all elements first, one call is effectively always wasted for each run.
+- Since the recursive search function skips all elements first, one call is effectively always wasted for every run with a non-zero target value.
