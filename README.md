@@ -55,7 +55,7 @@ Below is an explanation of how the program works.
 3. The recursive tree first branches all the way down to the subset with 0 elements (skipping all elements), goes back 1 branch to take the largest element in the sorted set, and if that is not a valid subset, it goes back up another branch to repeat. This is repeated until it reaches the root, in which it starts the same process all over again but with the smallest element in the subset.
 4. In each function call, the sum of the elements in the subset are first compared to the target sum (maximum knapsack capacity). If the sum of the subset is equal to the target, a valid subset is found. When a valid subset is found or the function calls reach a 'leaf' of the tree (done going through a full path of selecting elements from the original set), the subset is returned back up the tree until it reaches the root.
 5. Due to arrays having fixed size, a zero is used to denote the end of the subset (for non-zero target values, an optimal subset should have no zeros as zeros contribute nothing to the sum) if the subset is not the same as the original sorted set so that garbage from the unused allocated array memory is not displayed when looping through the array to print out the numbers in the subset.
-6. The root function then returns the subset for the main program to print out on the command-line terminal / console using a for-loop in another function.
+6. The root function then returns the subset for the main program to print out on the terminal using a for-loop in another function.
 
 ## Limitations
 - For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
