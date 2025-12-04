@@ -39,9 +39,9 @@ Subset of the above commands should be `{8, 10, 24}`.
 - `[set[0] set[1] ...]` - Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
 
 ## What is Knapsack
-This implements a solver for a variant where there is a multiset of numbers that you need to select a subset of to fill a metaphorical knapsack with, where the sum of the numbers in the subset is exactly equal to the maximum value the knapsack can hold.
+This program implements a solver for a knapsack variant where there is a multiset of integers to select a valid subset from, where a valid subset's sum is exactly equal to the target value.
 
-To solve the knapsack problem, find a way to fill the knapsack with the least number of elements out of all valid subsets.
+In the case of multiple valid subsets, find a subset with the least number of elements out of all valid subsets.
 
 ## Why
 For fun, to practice writing, debugging, and compiling programs in a "low-level" language like C, and to try solving problems using recursion.
