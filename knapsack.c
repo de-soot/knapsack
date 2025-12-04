@@ -65,9 +65,9 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
 		if(skip != 0) { return skip; }
 		
-		// take current number in set
 		int num = set[index];
 
+		// take current number in set
 		if(num != 0) { // optimal subset should take no zeros
 			subset[takeCount] = num; // latest previously added element is indexed at the current takeCount - 1
 			int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
