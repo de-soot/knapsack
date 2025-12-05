@@ -20,6 +20,7 @@ For fun, to practice C programming, and to solve problems using recursion.
 ## Limitations
 - For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
 - Since the recursive search function skips all elements first, one call is effectively always wasted for every run with a non-zero target value and non-empty-set solution.
+- If target value equals 0 and the original set contains a zero but its length is larger than 1, the empty set (`{}`) will be output instead of (`{0}`).
 
 ## Usage
 
