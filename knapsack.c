@@ -30,7 +30,14 @@ void printSet(int *set, int length, int isSubset) {
 	// whether to print "subset" or "set"
 	if(isSubset) { printf("subset = {"); }
 	else { printf("set = {"); }
+
+	// subset only contains zero if target is zero and original set contains zero
+	if(isSubset && set[0] == 0) {
+		printf("%d}\n", 0); // print 0, close bracket, and newline
+		return; // skip for loop below
+	}
 	
+	// below code only runs if subset does not contain a zero
 	for(int i = 0; i < length; i++) {
 		int element = set[i];
 		// subset containing zero is only valid for target = 0
@@ -42,7 +49,7 @@ void printSet(int *set, int length, int isSubset) {
 		printf("%d", element);
 	}
 
-	printf("}\n"); // close bracket
+	printf("}\n"); // close bracket and newline
 }
 
 // convert command-line args to int array (in-place)
@@ -73,8 +80,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		int num = set[index];
 
 		// take current number
-		// target == 0 XNOR num == 0
-		if((target == 0) == (num == 0)) { // subset should take no zeros for non-zero targets
+		if((target == 0) || ((target != 0) && (num != 0))) { // subset should take no zeros unless target is zero
 			subset[takeCount] = num; // append new element to subset
 			int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
 			if(take != NULL) { return take; }

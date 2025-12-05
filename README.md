@@ -4,7 +4,7 @@ Implementation of the recursive depth-first search algorithm for the subset sum 
 ## What is This
 This program implements a solver for a knapsack variant where there is a multiset of integers to select a valid subset from, where a valid subset's sum is exactly equal to the target value.
 
-In the case of multiple valid subsets, a subset with the least number of elements out of all valid subsets is found.
+In the case of multiple valid subsets, a subset with the least number of elements out of all valid subsets is found; and in the case of multiple valid subsets with the lowest number of elements, the subset with elements that are closest to each other are chosen.
 
 ## Why Was This Made
 For fun, to practice C programming, and to solve problems using recursion.
@@ -20,7 +20,6 @@ For fun, to practice C programming, and to solve problems using recursion.
 ## Limitations
 - For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
 - Since the recursive search function skips all elements first, one call is effectively always wasted for every run with a non-zero target value and non-empty-set solution.
-- If target value equals 0 and the original set contains a zero but its length is larger than 1, the empty set (`{}`) will be output instead of (`{0}`) due to `0` being used to denote the end of subsets when displaying sets.
 
 ## Usage
 
