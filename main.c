@@ -14,18 +14,24 @@ int main(int argc, char **argv) {
 	int set[length] = {}; // init empty array
 
 	parseSet(set, argv, length); // parse args to fill in empty set array
-	printSet(set, length, 0); // printSet(set, length, isSubset?[0/1 (no/yes)])
-	printf("target = %d\nlength = %d\n", target, length); // print user-defined constraints
+	printSet(set, length, 0); // printSet(set, length, isSubset)
 
 	// check and sorts set
-	if(unsorted(set, length)) { sort(set, length); }
+	if(unsorted(set, length)) {
+		sort(set, length);
+		printf("sorted ");
+		printSet(set, length, 0); // printSet(set, length, isSubset)
+	}
 
-	int s[length]; // for *subset initialisation; largest possible subset should never be larger than original set
+	// print user-defined constraints
+	printf("target = %d\nlength = %d\n", target, length);
+
+	int s[length]; // for *subset initialisation
 
 	// findSubset(set, subset, length, target, sum, index, takeCount);
 	int *subset = findSubset(set, s, length, target, 0, 0, 0);
 
-	if(subset == 0) { printf("No valid subset with a sum equal to the target value was found\n"); }
+	if(subset == 0) { printf("subset = {}\n"); }
 	else { printSet(subset, length, 1); }
 
 	return 0;

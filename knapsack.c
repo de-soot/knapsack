@@ -28,22 +28,26 @@ void sort(int *set, int length) {
 
 void printSet(int *set, int length, int isSubset) {
 	// whether to print "subset" or "set"
-	if(isSubset) { printf("subset = {%d", set[0]); }
-	else { printf("set = {%d", set[0]); }
+	if(isSubset) { printf("subset = {"); }
+	else { printf("set = {"); }
 	
-	for(int i = 1; i < length; i++) {
+	for(int i = 0; i < length; i++) {
 		int element = set[i];
 		// stop when not subset or reach end of subset (denoted by 0)
 		if(isSubset && element == 0) { break; }
-		printf(", %d", element); // print element
+		
+		// formatting with comma and spaces
+		if(i > 0) { printf(", "); }
+		printf("%d", element);
 	}
+
 	printf("}\n"); // close bracket
 }
 
 // convert command-line args to int array (in-place)
 void parseSet(int *set, char **argv, int length) {
-	for(int i = 2; i < length; i++) {
-		set[i] = atoi(argv[i]); // ascii to int
+	for(int i = 0; i < length; i++) {
+		set[i] = atoi(argv[2+i]); // ascii to int; 2+i because first 2 args are not set elements
 	}
 }
 

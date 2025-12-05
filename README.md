@@ -17,6 +17,10 @@ For fun, to practice C programming, and to solve problems using recursion.
 5. Due to arrays having fixed size, a zero is used to denote the end of the subset (for non-zero target values, an optimal subset should have no zeros as zeros contribute nothing to the sum) if the subset is not the same as the original sorted set so that garbage from the unused allocated array memory is not displayed when looping through the array to print out the numbers in the subset.
 6. The root function then returns the subset for the main program to print out on the terminal using a for-loop in another function.
 
+## Limitations
+- For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
+- Since the recursive search function skips all elements first, one call is effectively always wasted for every run with a non-zero target value and non-empty-set solution.
+
 ## Usage
 
 Download the binary files [here](https://github.com/de-soot/knapsack/releases/latest).
@@ -54,6 +58,12 @@ Subset of the above commands should be `{8, 10, 24}`.
 
 - `[set[0] set[1] ...]` - Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
 
-## Limitations
-- For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
-- Since the recursive search function skips all elements first, one call is effectively always wasted for every run with a non-zero target value.
+## How to Compile
+- There is a shell script `build.sh` included to automate the compiling process to produce binaries for both Linux and Windows platforms.
+
+### Requirements
+- Since it is a shell (`.sh`) script and not a batch (`.bat`) script, you need to be running Linux for this
+- `glibc-devel.x86_64` has to be installed if you want to compile for 64-bit Linux
+- `glibc-devel.i686` has to be installed if you want to compile for 32-bit Linux
+- `mingw64-gcc` has to be installed if you want to compile for 64-bit Windows
+- `mingw32-gcc` has to be installed if you want to compile for 32-bit Windows
