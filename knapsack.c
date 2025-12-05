@@ -33,8 +33,9 @@ void printSet(int *set, int length, int isSubset) {
 	
 	for(int i = 0; i < length; i++) {
 		int element = set[i];
-		// stop when reach end of subset (denoted by 0)
-		if(isSubset && element == 0) { break; }
+		// subset containing zero is only valid for target = 0
+		// stop when reach end of subset (denoted by 0 for non-zero target)
+		if(isSubset && element == 0 && length > 1) { break; }
 		
 		// formatting with comma and spaces
 		if(i > 0) { printf(", "); }
@@ -67,7 +68,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 	} else if(index < length) {
 		// skip current number
 		int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
-		if(skip != 0) { return skip; }
+		if(skip != NULL) { return skip; }
 
 		int num = set[index];
 
@@ -76,9 +77,9 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		if((target == 0) == (num == 0)) { // subset should take no zeros for non-zero targets
 			subset[takeCount] = num; // append new element to subset
 			int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
-			if(take != 0) { return take; }
+			if(take != NULL) { return take; }
 		}
 	}
 
-	return 0; // if no non-empty valid subset found, end traversal
+	return NULL; // if no non-empty valid subset found, end current path and go back
 }

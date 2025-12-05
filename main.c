@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
 	// findSubset(set, subset, length, target, sum, index, takeCount);
 	int *subset = findSubset(set, s, length, target, 0, 0, 0);
 
-	if(subset == 0) { printf("subset = {}\n"); }
+	if(subset == NULL) { printf("subset = {} (empty set)\n"); }
 	else { printSet(subset, length, 1); }
 
 	return 0;
