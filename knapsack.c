@@ -42,7 +42,7 @@ void printSet(int *set, int length, int isSubset) {
 		int element = set[i];
 		// subset containing zero is only valid for target = 0
 		// stop when reach end of subset (denoted by 0 for non-zero target)
-		if(isSubset && element == 0 && length > 1) { break; }
+		if(isSubset && element == 0) { break; }
 		
 		// formatting with comma and spaces
 		if(i > 0) { printf(", "); }
