@@ -33,7 +33,7 @@ void printSet(int *set, int length, int isSubset) {
 	
 	for(int i = 0; i < length; i++) {
 		int element = set[i];
-		// stop when not subset or reach end of subset (denoted by 0)
+		// stop when reach end of subset (denoted by 0)
 		if(isSubset && element == 0) { break; }
 		
 		// formatting with comma and spaces
