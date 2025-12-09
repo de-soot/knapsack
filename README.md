@@ -1,5 +1,5 @@
 # Knapsack
-Implementation of the recursive depth-first search algorithm for the subset sum problem in C.
+Implementation of the recursive depth-first search algorithm for the subset sum problem (a variation of the knapsack problem).
 
 ## What is This
 This program implements a solver for a knapsack variant where there is a multiset of integers to select a valid subset from, where a valid subset's sum is exactly equal to the target value.
@@ -52,11 +52,11 @@ Subset of the above command should be `{8, 10, 24}`.
 Subset of the above commands should be `{8, 10, 24}`.
 
 ### Legend
-- `[i686/x86_64]` - CPU architecture (32-bit / 64-bit)
+- `[i686/x86_64]`: CPU architecture (32-bit / 64-bit)
 
-- `[target]` - Value of subset's sum
+- `[target]`: Value of subset's sum
 
-- `[set[0] set[1] ...]` - Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
+- `[set[0] set[1] ...]`: Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
 
 ## How to Compile
 - There is a shell script `build.sh` included to automate the compiling process to produce binaries for both Linux and Windows platforms.
