@@ -62,7 +62,7 @@ Subset of the above commands should be `{8, 10, 24}`.
 - There is a shell script `build.sh` included to automate the compiling process to produce binaries for both Linux and Windows platforms
 
 ### Requirements
-- Since it is a shell (`.sh`) script and not a batch (`.bat` / `.cmd`) script, you need to be running Linux for this
+- Since it is a shell (`.sh`) script and not a batch (`.bat` / `.cmd`) script, you need to be running Linux
 - `glibc-devel.x86_64` has to be installed if you want to compile for 64-bit Linux
 - `glibc-devel.i686` has to be installed if you want to compile for 32-bit Linux
 - `mingw64-gcc` has to be installed if you want to compile for 64-bit Windows
