@@ -56,7 +56,7 @@ Subset of the above commands should be `{8, 10, 24}`.
 
 - `[target]`: Value of subset's sum
 
-- `[set[0] set[1] ...]`: Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc.
+- `[set[0] set[1] ...]`: Set of numbers seperated by spaces; `set[0]` is the first number in the set, `set[1]` is the second, etc
 
 ## How to Compile
 - There is a shell script `build.sh` included to automate the compiling process to produce binaries for both Linux and Windows platforms.
