@@ -16,15 +16,19 @@ void sort(int *set, int length) { // sort in descending order
 	}
 }
 
+// assumes set is not empty
 void printSet(int *set, int length, int isSubset) {
 	// whether to print "subset" or "set"
-	if(isSubset) { printf("subset = {"); }
-	else { printf("set = {"); }
+	if(isSubset) {
+		printf("subset = {");
 
-	// subset only contains zero if target is zero and original set contains zero
-	if(isSubset && set[0] == 0) {
-		printf("%d}\n", 0); // print 0, close bracket, and newline
-		return; // skip for loop below
+		// subset contains only zero if target is zero and original set contains zero
+		if(set[0] == 0) {
+			printf("%d}\n", 0); // print 0, close bracket, and newline
+			return; // skip for-loop printing elements below
+		}
+	} else {
+		printf("set = {");
 	}
 
 	// below code only runs if subset does not contain a zero
