@@ -64,22 +64,20 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 	}
 
 	if(index < length) { // include/exclude next element in set into subset
-		if(target >= 0) {
-			int num = set[index];
+		int num = set[index];
 
+		if(target >= 0) {
 			// take current number
-			if((target == 0 && sum == 0 && num == 0) || (target != 0 && num != 0)) { // subset should take no zeros unless target is zero
+			if((target == 0 && num == 0) || (target != 0 && num != 0)) { // subset should take no zeros unless target is zero
 				subset[takeCount] = num; // append new element to subset
 				int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
-				if(take != NULL) { printf("taking %d\n", num); return take; }
+				if(take != NULL) { return take; }
 			}
 
 			// skip current number
 			int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
 			if(skip != NULL) { return skip; }
 		} else { // negative target
-			int num = set[index];
-
 			// skip current number
 			int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
 			if(skip != NULL) { return skip; }
@@ -88,7 +86,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 			if(num != 0) { // subset should take no zeros unless target is zero
 				subset[takeCount] = num; // append new element to subset
 				int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
-				if(take != NULL) { printf("taking %d\n", num); return take; }
+				if(take != NULL) { return take; }
 			}
 		}
 	}
