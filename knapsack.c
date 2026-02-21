@@ -63,20 +63,36 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		return subset;
 	}
 
-	if(index < length) { // include/exclude next set element in subset
-		int num = set[index];
+	if(target >= 0) {
+		if(index < length) { // include/exclude next element in set into subset
+			int num = set[index];
 
-		// take current number
-		if((target == 0) || ((target != 0) && (num != 0))) { // subset should take no zeros unless target is zero
-			subset[takeCount] = num; // append new element to subset
-			int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
-			if(take != NULL) { return take; }
+			// take current number
+			if((target == 0 && sum == 0 && num == 0) || (target != 0 && num != 0)) { // subset should take no zeros unless target is zero
+				subset[takeCount] = num; // append new element to subset
+				int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
+				if(take != NULL) { printf("taking %d\n", num); return take; }
+			}
+
+			// skip current number
+			int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
+			if(skip != NULL) { return skip; }
 		}
+	} else { // target is negative
+		if(index < length) { // include/exclude next element in set into subset
+			int num = set[index];
 
-		// skip current number
-		int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
-		if(skip != NULL) { return skip; }
+			// skip current number
+			int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
+			if(skip != NULL) { return skip; }
 
+			// take current number
+			if((target == 0 && sum == 0 && num == 0) || (target != 0 && num != 0)) { // subset should take no zeros unless target is zero
+				subset[takeCount] = num; // append new element to subset
+				int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
+				if(take != NULL) { printf("taking %d\n", num); return take; }
+			}
+		}
 	}
 
 	return NULL; // backtrack if no non-empty valid subset found

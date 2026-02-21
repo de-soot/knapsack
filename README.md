@@ -10,17 +10,16 @@ In the case of multiple valid subsets, a subset with the least number of element
 For fun, to practice C programming, and to solve problems using recursion.
 
 ## How It Works
-1. The program checks if the set is sorted, and sorts it in ascending order (using iterative selection sort) if it is not. This is to ensure the valid subset that is found first will have the lowest possbile amount of elements out of all valid subsets.
+1. The program first sorts the set in descending order using iterative selection sort. This is to ensure the valid subset that is found first will have the lowest possbile amount of elements out of all valid subsets.
 2. The recursive function combs through all the possible subsets, choosing either to take or skip each element in the sorted set until it finds a valid subset. Each function call creates two new branches and the elements are summed and compared to the target value. The algorithm has a time complexity of `O(2^n * n)`, where `n` is the number of elements in the original set.
-3. In every function call (except the root, when the subset would be empty at first), the sum of the elements in the subset are first compared to the target value. If the sum of the subset is equal to the target, a valid subset is found. When a valid subset is found or the function calls reach a 'leaf' of the tree (done going through a full path of selecting elements from the original set), the pointer to the subset (or to `NULL`, if invalid) is returned back up the tree until it reaches the root.
-4. The binary tree first branches all the way down to the subset with 0 elements (skipping all elements), goes back 1 step to take the largest (last) element in the sorted set, and if that is not a valid subset, then goes back another step to walk down the other branch. It repeatedly goes back to try out new branches until it either finds a valid subset. If it goes back enough and reaches the root, it starts the same process all over again, but now with the smallest (first) element of the sorted set included in the subset.
+3. In every function call, the sum of the elements in the subset are first compared to the target value. If the sum of the subset is equal to the target, a valid subset is found. When a valid subset is found or the function calls reach a 'leaf' of the tree (done going through a full path of selecting elements from the original set), the pointer to the subset (or to `NULL`, if invalid) is returned back up the tree until it reaches the root node.
+4. If the target is non-negative, the subset will include the largest elements first. When backtracking, it takes the next largest element and branches down until it either finds a valid subset or not. If no valid subset is found in that branch, it then backtraacks again. The process is flipped for negative targets and the subset will include the smallest (most negative) elements first, taking the next smallest element when backtracking.
 5. Due to arrays having fixed size, a zero is used to denote the end of the subset if the subset is not the same as the original sorted set. This is so that garbage from the unused allocated array memory is not displayed when looping through the array to print out the numbers in the subset. For non-zero target values, an optimal subset should have no zeros as zeros contribute nothing to the sum, so zero is used to denote the end of subsets.
 6. The first function call then returns the subset for the main program to print out on the terminal using a for-loop in another helper function located in `knapsack.c`.
 
 ## Limitations
 - For ease-of-use, this program is designed to only handle integer values, but it can be easily modified to allow more (such as floating-point and even characters).
 - Since the recursive search function skips all elements first, one call is always wasted for every run with a non-zero target value and non-empty-set solution.
-- Least optimal subset is found for negative targets
 
 ## Usage
 
