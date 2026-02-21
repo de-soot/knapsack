@@ -37,7 +37,9 @@ int main(int argc, char **argv) {
 			printf("No subset sums to target value\n");
 		}
 	}
-	else { printSet(subset, length, 1); }
+	else {
+		printSet(subset, length, 1);
+	}
 
 	return 0;
 }
