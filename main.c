@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
 		if(target == 0) {
 			printf("subset = {} (empty set)\n");
 		} else {
-			printf("No subset sums to target value");
+			printf("No subset sums to target value\n");
 		}
 	}
 	else { printSet(subset, length, 1); }
