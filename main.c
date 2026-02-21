@@ -24,9 +24,17 @@ int main(int argc, char **argv) {
 	printSet(set, length, 0); // printSet(set, length, isSubset)
 
 	int subsetInit[length]; // initialise subset
+	int *subset; // declare subset
 
-	// findSubset(set, subset, length, target, sum, index, takeCount);
-	int *subset = findSubset(set, subsetInit, length, target, 0, 0, 0);
+	// assuming sorted set is in descending order
+	if ((target < 0 && set[length - 1] >= 0) || (target > 0 && set[0] <= 0)) {
+		// if target is negative but lowest value is non-negative
+		// or target is positive but highest value is non-positive
+		subset = NULL; // obviously not possible to reach target
+	} else { // might be possible to reach target
+		// param list: set, subset, length, target, sum, index, takeCount
+		subset = findSubset(set, subsetInit, length, target, 0, 0, 0);
+	}
 
 	if(subset == NULL) {
 		if(target == 0) {
