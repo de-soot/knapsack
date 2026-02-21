@@ -26,14 +26,14 @@ void printSet(int *set, int length, int isSubset) {
 		printf("%d}\n", 0); // print 0, close bracket, and newline
 		return; // skip for loop below
 	}
-	
+
 	// below code only runs if subset does not contain a zero
 	for(int i = 0; i < length; i++) {
 		int element = set[i];
 		// subset containing zero is only valid for target = 0
 		// stop when reach end of subset (denoted by 0 for non-zero target)
 		if(isSubset && element == 0) { break; }
-		
+
 		// formatting with comma and spaces
 		if(i > 0) { printf(", "); }
 		printf("%d", element);
@@ -59,12 +59,12 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		if(takeCount < length) { // do not denote if subset is full
 			subset[takeCount] = 0;
 		}
-		
+
 		return subset;
 	}
 
-	if(target >= 0) {
-		if(index < length) { // include/exclude next element in set into subset
+	if(index < length) { // include/exclude next element in set into subset
+		if(target >= 0) {
 			int num = set[index];
 
 			// take current number
@@ -77,9 +77,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 			// skip current number
 			int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
 			if(skip != NULL) { return skip; }
-		}
-	} else { // target is negative
-		if(index < length) { // include/exclude next element in set into subset
+		} else { // negative target
 			int num = set[index];
 
 			// skip current number
@@ -87,7 +85,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 			if(skip != NULL) { return skip; }
 
 			// take current number
-			if((target == 0 && sum == 0 && num == 0) || (target != 0 && num != 0)) { // subset should take no zeros unless target is zero
+			if(num != 0) { // subset should take no zeros unless target is zero
 				subset[takeCount] = num; // append new element to subset
 				int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
 				if(take != NULL) { printf("taking %d\n", num); return take; }
