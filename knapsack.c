@@ -4,20 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h> // for atoi()
 
-// checks if elements are sorted in ascending order
-int unsorted(int *set, int length) {
-	for(int i = 0; i < length - 1; i++) {
-		if(set[i] > set[i+1]) { return 1; }
-	}
-
-	return 0;
-}
-
-// sort in ascending order
-void sort(int *set, int length) {
+void sort(int *set, int length) { // sort in descending order
 	for(int i = 0; i < length; i++) {
 		for(int j = i+1; j < length; j++) {
-			if(set[i] > set[j]) { // swap elements
+			if(set[i] < set[j]) { // swap elements
 				int temp = set[i];
 				set[i] = set[j];
 				set[j] = temp;
@@ -61,8 +51,7 @@ void parseSet(int *set, char **argv, int length) {
 
 // find the first valid subset matching the exact target value using recursion
 // will return the subset with the lowest possbile number of elements if
-// the original set is sorted in ascending order.
-// will skip all elements first
+// the original set is sorted in ascending order
 int *findSubset(int *set, int *subset, int length, int target, int sum, int index, int takeCount) {
 	if ((target < 0 && set[0] >= 0) || (target > 0 && set[length - 1] <= 0)) {
 		// if target is negative but lowest value is non-negative
@@ -80,11 +69,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		return subset;
 	}
 
-	if(index < length) {
-		// skip current number
-		int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
-		if(skip != NULL) { return skip; }
-
+	if(index < length) { // include/exclude next set element in subset
 		int num = set[index];
 
 		// take current number
@@ -93,7 +78,12 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 			int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
 			if(take != NULL) { return take; }
 		}
+
+		// skip current number
+		int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
+		if(skip != NULL) { return skip; }
+
 	}
 
-	return NULL; // if no non-empty valid subset found, end current path and go back
+	return NULL; // backtrack if no non-empty valid subset found
 }

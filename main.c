@@ -19,11 +19,9 @@ int main(int argc, char **argv) {
 	printf("target = %d\nlength = %d\n", target, length);
 
 	// check and sorts set
-	if(unsorted(set, length)) {
-		sort(set, length);
-		printf("sorted ");
-		printSet(set, length, 0); // printSet(set, length, isSubset)
-	}
+	sort(set, length);
+	printf("sorted ");
+	printSet(set, length, 0); // printSet(set, length, isSubset)
 
 	int subsetInit[length]; // initialise subset
 
