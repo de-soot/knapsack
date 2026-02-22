@@ -4,7 +4,19 @@
 #include <stdio.h>
 #include <stdlib.h> // for atoi()
 
-void sort(int *set, int length) { // sort in descending order
+void sortAsc(int *set, int length) { // sort in ascending order
+	for(int i = 0; i < length; i++) {
+		for(int j = i+1; j < length; j++) {
+			if(set[i] > set[j]) { // swap elements
+				int temp = set[i];
+				set[i] = set[j];
+				set[j] = temp;
+			}
+		}
+	}
+}
+
+void sortDesc(int *set, int length) { // sort in descending order
 	for(int i = 0; i < length; i++) {
 		for(int j = i+1; j < length; j++) {
 			if(set[i] < set[j]) { // swap elements
@@ -67,31 +79,26 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 		return subset;
 	}
 
+	int num = set[index]; // get next element
+
+	// return zero element if target is zero and set contains zero
+	if(target == 0 && num == 0) {
+		subset[0] = 0;
+		
+		return subset;
+	}
+
 	if(index < length) { // include/exclude next element in set into subset
-		int num = set[index];
 
-		if(target >= 0) {
-			// take current number
-			if((target == 0 && takeCount == 0 && sum == 0 && num != 0) || (target == 0 && sum != 0 && num != 0) || (target == 0 && sum == 0 && num == 0) || (target != 0 && num != 0)) { // subset should take no zeros unless target is zero
-				subset[takeCount] = num; // append new element to subset
-				int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
-				if(take != NULL) { return take; }
-			}
+		// skip current number
+		int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
+		if(skip != NULL) { return skip; }
 
-			// skip current number
-			int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
-			if(skip != NULL) { return skip; }
-		} else { // negative target
-			// skip current number
-			int *skip = findSubset(set, subset, length, target, sum, index+1, takeCount);
-			if(skip != NULL) { return skip; }
-
-			// take current number
-			if(num != 0) { // subset should take no zeros unless target is zero
-				subset[takeCount] = num; // append new element to subset
-				int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
-				if(take != NULL) { return take; }
-			}
+		// take current number
+		if(num != 0) { // subset should take no zeros unless target is zero
+			subset[takeCount] = num; // append new element to subset
+			int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
+			if(take != NULL) { return take; }
 		}
 	}
 
