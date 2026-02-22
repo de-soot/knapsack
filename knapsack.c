@@ -72,7 +72,7 @@ int *findSubset(int *set, int *subset, int length, int target, int sum, int inde
 
 		if(target >= 0) {
 			// take current number
-			if((target == 0 && num == 0) || (target != 0 && num != 0)) { // subset should take no zeros unless target is zero
+			if((target == 0 && takeCount == 0 && sum == 0 && num != 0) || (target == 0 && sum != 0 && num != 0) || (target == 0 && sum == 0 && num == 0) || (target != 0 && num != 0)) { // subset should take no zeros unless target is zero
 				subset[takeCount] = num; // append new element to subset
 				int *take = findSubset(set, subset, length, target, sum + num, index+1, takeCount+1);
 				if(take != NULL) { return take; }
